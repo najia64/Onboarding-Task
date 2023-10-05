@@ -1,0 +1,43 @@
+workflows:
+  internal-deployment:
+    name: Internal deployment
+    max_build_duration: 90
+    environment:
+      groups:
+        - firebase_credentials
+      flutter: stable
+      xcode: latest
+      cocoapods: default
+    cache:
+      cache_paths:
+        - $HOME/Library/Caches/CocoaPods
+        - $HOME/.gradle/caches
+        - $FLUTTER_ROOT/.pub-cache
+    triggering:
+      events:
+        - tag
+    scripts:
+      - name: Install fastlane-plugin-firebase_app_distribution
+        script: |
+          gem install bundler
+          sudo gem install fastlane-plugin-firebase_app_distribution --user-install
+      - name: iOS Build and Deploy
+        script:
+          - cd ios
+          - bundle install
+          - bundle exec fastlane ios_beta_app
+
+      - name: Android Build and Deploy
+        script:
+          - cd android
+          - bundle install
+          - bundle exec fastlane android_beta_app
+    artifacts:
+      - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/ios/ipa/*.ipa
+      - flutter_drive.log
+    publishing:
+      slack:
+        channel: "#your-channel"
+        notify_on_build_start: false
