@@ -17,17 +17,17 @@ workflows:
       events:
         - tag
     scripts:
-      - name: Install fastlane-plugin-firebase_app_distribution
+      - name: "Install fastlane-plugin-firebase_app_distribution"
         script: |
           gem install bundler
           sudo gem install fastlane-plugin-firebase_app_distribution --user-install
-      - name: iOS Build and Deploy
+      - name: "iOS Build and Deploy"
         script:
           - cd ios
           - bundle install
           - bundle exec fastlane ios_beta_app
 
-      - name: Android Build and Deploy
+      - name: "Android Build and Deploy"
         script:
           - cd android
           - bundle install
