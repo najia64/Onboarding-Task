@@ -29,7 +29,7 @@ class _ApiClient implements ApiClient {
       r'sort_by': sortBy,
     };
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<ResponseData>(Options(
       method: 'GET',
