@@ -23,25 +23,21 @@
 default_platform(:ios)
 
 platform :ios do
-  desc "Push a new beta build to Firebase"
-  lane :ios_beta_app do
-      # match(type: 'adhoc', app_identifier: ['pk.movies.sample'])
-      gym(
-          project: 'Runner.xcodeproj',
-          scheme: 'Release-Development',
-          configuration: 'Release-Development',
-          clean: true,
-          output_directory: 'archives',
-          output_name: 'pk.movies.sample.ipa',
-          export_method: 'ad-hoc'
-      )
-      # Upload our build to Firebase
-      firebase_app_distribution(
-          app: "1:784060653042:ios:a646c336ccae7dde5f5f6b",
-          testers:"najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
-          release_notes: "Initial test version of the app",
-          firebase_cli_path: "/usr/local/bin/firebase",
-          ipa_path: "./build/Runner/Runner.ipa"
-      )
-  end
+    desc "Push a new beta build to Firebase"
+    lane :ios_beta_app do
+        build_app(
+            scheme: "Runner",
+            archive_path: "./build/Runner.xcarchive",
+            export_method: "development",
+            output_directory: "./build/Runner"
+        )
+        # Upload our build to Firebase
+        firebase_app_distribution(
+            app: "1:784060653042:ios:a646c336ccae7dde5f5f6b",
+            testers:"najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
+            release_notes: "Initial test version of the app",
+            firebase_cli_path: "/usr/local/bin/firebase",
+            ipa_path: "./build/Runner/Runner.ipa"
+        )
+    end
 end
