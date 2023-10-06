@@ -17,7 +17,7 @@ workflows:
         - $FLUTTER_ROOT/.pub-cache
     triggering:
       events:
-        - tag
+        - push
     scripts:
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
