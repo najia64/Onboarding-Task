@@ -56,7 +56,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('/Users/najiaikhlaq/Documents/secret/my-release-key.keystore')
+            storeFile file('.../my-release-key.keystore')
             storePassword 'testingdeployment1'
             keyAlias 'my-key-alias'
             keyPassword 'testingdeployment1'

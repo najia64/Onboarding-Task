@@ -5,6 +5,8 @@ workflows:
     environment:
       groups:
         - firebase_credentials
+      android_signing:
+        - keystore_reference
       flutter: stable
       xcode: latest
       cocoapods: default
