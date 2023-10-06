@@ -43,7 +43,6 @@ platform :android do
     gradle(
         task: 'assemble',
         build_type: 'Release'
-        project_dir: 'android/'
     )
     lane :android_beta_app do
         firebase_app_distribution(
