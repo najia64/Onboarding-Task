@@ -45,7 +45,7 @@ platform :android do
     #     build_type: 'Release'
     # )
     lane :android_beta_app do
-        sh "flutter build appbundle --no-tree-shake-icons --release --trarget-platform android-arm64 --flavor production -t lib/main.dart"
+        sh "flutter build appbundle --no-tree-shake-icons --release --target-platform android-arm64 --flavor production -t lib/main.dart"
         firebase_app_distribution(
             app: "1:784060653042:android:b6e17b297526488e5f5f6b",
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
