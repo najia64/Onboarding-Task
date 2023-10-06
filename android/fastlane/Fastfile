@@ -45,6 +45,7 @@ platform :android do
     #     build_type: 'Release'
     # )
     lane :android_beta_app do
+        sh "flutter clean"
         sh "flutter build appbundle -v"
         firebase_app_distribution(
             app: "1:784060653042:android:b6e17b297526488e5f5f6b",
