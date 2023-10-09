@@ -7,7 +7,7 @@ platform :android do
             app: "1:784060653042:android:b6e17b297526488e5f5f6b",
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
             release_notes: "Release notes: this is a sample app test",
-            apk_path: "../build/app/outputs/bundle/release/app-release.aab"
+            apk_path: "../build/app/outputs/bundle/release/app-release.aab",
             serviceCredentialsFile: "$CM_BUILD_DIR/firebase_credentials.json"
         )
     end
