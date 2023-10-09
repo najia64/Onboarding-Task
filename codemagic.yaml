@@ -17,6 +17,10 @@ workflows:
       events:
         - push
     scripts:
+    - name: Install fastlane-plugin-firebase_app_distribution
+      script: |
+        gem install bundler
+        sudo gem install fastlane-plugin-firebase_app_distribution --user-install
       - name: Build APK
         script: flutter build appbundle -v
       - echo $firebase_credentials
