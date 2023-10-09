@@ -19,10 +19,6 @@ workflows:
       events:
         - push
     scripts:
-      # - name: Install fastlane-plugin-firebase_app_distribution
-      #   script: |
-      #     gem install bundler
-      #     sudo gem install fastlane-plugin-firebase_app_distribution --user-install
       - name: Android Build and Deploy
         script: |
           cd android
@@ -36,7 +32,7 @@ workflows:
     artifacts:
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
-      - build/ios/ipa/*.ipa
+      # - build/ios/ipa/*.ipa
       - flutter_drive.log
     publishing:
       slack:
