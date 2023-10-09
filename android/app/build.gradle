@@ -60,7 +60,7 @@ android {
         release {
             storeFile file('upload-keystore.jks')
             storePassword 'testingdeployment1'
-            keyAlias 'my-key-alias'
+            keyAlias 'upload'
             keyPassword 'testingdeployment1'
         }
     }
