@@ -8,7 +8,7 @@ platform :android do
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
             release_notes: "Release notes: this is a sample app test",
             apk_path: "../build/app/outputs/bundle/release/app-release.aab",
-            service_credentials_file: $GOOGLE_APPLICATION_CREDENTIALS
+            service_credentials_file: '../../firebase_credentials.json'
         )
     end
 end

@@ -17,9 +17,9 @@ workflows:
       events:
         - push
     scripts:
-      - echo $firebase_credentials > firebase_credentials.json
       - name: Build APK
         script: flutter build appbundle -v
+      - echo $firebase_credentials
       - name: Android Build and Deploy
         script: |
           cd android
