@@ -1,6 +1,7 @@
-# fastlane documentation
+fastlane documentation
+----
 
-Installation
+# Installation
 
 Make sure you have the latest version of the Xcode command line tools installed:
 
@@ -10,33 +11,17 @@ xcode-select --install
 
 For _fastlane_ installation instructions, see [Installing _fastlane_](https://docs.fastlane.tools/#installing-fastlane)
 
-Available Actions
+# Available Actions
 
 ## Android
 
-### android test
+### android android_beta_app
 
 ```sh
-[bundle exec] fastlane android test
+[bundle exec] fastlane android android_beta_app
 ```
 
-Runs all the tests
-
-### android beta
-
-```sh
-[bundle exec] fastlane android beta
-```
-
-Submit a new Beta Build to Crashlytics Beta
-
-### android deploy
-
-```sh
-[bundle exec] fastlane android deploy
-```
-
-Deploy a new version to the Google Play
+<Building app for android>
 
 ----
 
