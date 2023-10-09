@@ -30,7 +30,7 @@ workflows:
       #     bundle install
       #     bundle exec fastlane ios_beta_app
     artifacts:
-      - build/app/outputs/bundle/release/app-release.aab
+      - build/app/outputs/bundle/release/app-release.apk
       - build/**/outputs/**/*.apk
       - build/**/outputs/**/*.aab
       - build/ios/ipa/*.ipa
