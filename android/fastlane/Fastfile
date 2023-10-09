@@ -9,7 +9,7 @@ platform :android do
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
             release_notes: "Release notes: this is a sample app",
             firebase_cli_path: "/usr/local/bin/firebase",
-            apk_path: "../build/app/outputs/apk/release/app-release.apk"
+            apk_path: "../build/app/outputs/apk/release/app-release.aab"
         )
     end
 end
