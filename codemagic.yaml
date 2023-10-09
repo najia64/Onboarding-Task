@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 90
     environment:
       groups:
-        - firebase_credentials
+        - $firebase_credentials
       flutter: stable
       xcode: latest
       cocoapods: default
