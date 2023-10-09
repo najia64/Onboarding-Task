@@ -17,7 +17,7 @@ workflows:
       events:
         - push
     scripts:
-      - name: Build AAB
+      - name: Build APK
         script: flutter build appbundle -v
       - name: Android Build and Deploy
         script: |
