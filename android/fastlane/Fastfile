@@ -3,7 +3,7 @@ default_platform(:android)
 platform :android do
     desc "<Building app for android>"
     lane :android_beta_app do
-        sh "flutter build appbundle --flavor android-production -t lib/main.dart"
+        sh "flutter build appbundle -v"
         firebase_app_distribution(
             app: "1:784060653042:android:b6e17b297526488e5f5f6b",
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
