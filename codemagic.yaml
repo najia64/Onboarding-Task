@@ -5,7 +5,7 @@ workflows:
     environment:
       groups:
         - firebase_credentials
-        - google_credentials
+        - firebase_token
       flutter: stable
       xcode: latest
       cocoapods: default
@@ -20,14 +20,12 @@ workflows:
     scripts:
       - echo $FIREBASE_ACCOUNT_SERVICE
       - echo $FIREBASE_ACCOUNT_SERVICE > /Users/builder/firebase_credentials.json
-      - echo $GOOGLE_APPLICATION_CREDENTIALS
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
           gem install bundler
           sudo gem install fastlane-plugin-firebase_app_distribution --user-install
       - name: Build APK
         script: flutter build appbundle -v
-
       - name: Android Build and Deploy
         script: |
           cd android
