@@ -17,8 +17,7 @@ workflows:
       events:
         - push
     scripts:
-      # - echo $FIREBASE_ACCOUNT_SERVICE
-      # - echo $FIREBASE_ACCOUNT_SERVICE > /Users/builder/firebase_credentials.json
+      - echo $FIREBASE_TOKEN
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
           gem install bundler
@@ -42,8 +41,6 @@ workflows:
       - build/ios/ipa/*.ipa
       - flutter_drive.log
     publishing:
-      firebase:
-        firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
       slack:
         channel: "#your-channel"
         notify_on_build_start: false
