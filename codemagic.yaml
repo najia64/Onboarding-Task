@@ -19,7 +19,7 @@ workflows:
     scripts:
       - echo $FIREBASE_SERVICE_ACCOUNT
       - echo "$FIREBASE_SERVICE_ACCOUNT" > firebase_credentials.json
-      - firebase auth:import firebase_credentials.json --token "$FIREBASE_AUTH_TOKEN"
+      - firebase auth:import firebase_credentials.json --token "$FIREBASE_AUTH_TOKEN" --project movies-sample-app
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
           gem install bundler
