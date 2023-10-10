@@ -19,7 +19,7 @@ workflows:
         - push
     scripts:
       - echo $FIREBASE_ACCOUNT_SERVICE
-      - export FIREBASE_ACCOUNT_SERVICE="firebase_credentials.json"
+      - echo $FIREBASE_ACCOUNT_SERVICE > $CM_BUILD_DIR/firebase_credentials.json
       - echo $GOOGLE_APPLICATION_CREDENTIALS
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
