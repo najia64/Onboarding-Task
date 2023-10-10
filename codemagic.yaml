@@ -18,7 +18,8 @@ workflows:
       events:
         - push
     scripts:
-      - export GOOGLE_APPLICATION_CREDENTIALS="$PWD/firebase_credentials.json"
+      - echo $FIREBASE_ACCOUNT_SERVICE
+      - export FIREBASE_ACCOUNT_SERVICE="firebase_credentials.json"
       - echo $GOOGLE_APPLICATION_CREDENTIALS
       - name: Install fastlane-plugin-firebase_app_distribution
         script: |
@@ -26,7 +27,7 @@ workflows:
           sudo gem install fastlane-plugin-firebase_app_distribution --user-install
       - name: Build APK
         script: flutter build appbundle -v
-      - echo $FIREBASE_ACCOUNT_SERVICE
+
       - name: Android Build and Deploy
         script: |
           cd android
