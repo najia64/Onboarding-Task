@@ -9,7 +9,7 @@ platform :android do
             release_notes: "Release notes: this is a sample app test",
             apk_path: "../build/app/outputs/bundle/release/app-release.aab",
             # firebase_cli_token: $FIREBASE_TOKEN,
-            service_credentials_file: "../firebase_credentials.json"
+            service_credentials_file: "../../firebase_credentials.json"
         )
     end
 end
