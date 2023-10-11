@@ -18,7 +18,7 @@ workflows:
         - push
     scripts:
       # - echo $FIREBASE_SERVICE_ACCOUNT
-      # - echo "$FIREBASE_SERVICE_ACCOUNT" > firebase_credentials.json
+      - echo "$FIREBASE_SERVICE_ACCOUNT" > firebase_credentials.json
       - firebase auth:import firebase_credentials.json --token "$FIREBASE_TOKEN" --project movies-sample-app
       # - name: Authenticate Firebase
       #   script: |
