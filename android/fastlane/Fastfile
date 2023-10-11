@@ -8,6 +8,7 @@ platform :android do
             testers: "najia.ikhlaq@gmail.com, najia.ikhlaq@din.global",
             release_notes: "Release notes: this is a sample app test",
             apk_path: "../build/app/outputs/bundle/release/app-release.aab",
+            firebase_cli_token: $FIREBASE_TOKEN
         )
     end
 end
